@@ -1,0 +1,580 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* var */
+:root {
+    --background-blue-color: #043873;
+    --light-color: #ffffff;
+    --yellow-color: #FFE492;
+    --blue-color: #4F9CF9;
+    --cyan-color: #C4DEFD;
+    --blue-dark-color: #2E4E73;
+}
+
+body {
+    background-color: var(--background-blue-color);
+}
+
+/* global styles */
+
+.crossing-out {
+    position: relative;
+    z-index: 2;
+}
+
+.crossing-out::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    left: -10px;
+    height: 150%;
+    width: 170%;
+    background: url(assets/Crossing-Out.svg) no-repeat left center / contain;
+}
+
+.crossing-out-2 {
+    position: relative;
+}
+
+.crossing-out-2::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 35%;
+    left: -20px;
+    height: 100%;
+    width: 120%;
+    background: url(assets/Crossing-Out-2.svg) no-repeat center ;
+}
+
+.bg-color-white {
+    background-color: var(--light-color);
+}
+
+.bg-color-blue {
+    background-color: var(--background-blue-color);
+}
+
+.flex-reverse {
+    flex-direction: row-reverse;
+}
+
+section {
+    padding: 140px 160px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 90px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.color-white {
+    color: var(--light-color);
+}
+
+.text-img-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.blue-bg {
+    background-color: var(--cyan-color);
+}
+
+
+/* logo */
+.logo-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-nav img {
+    width: 37px;
+    height: 29px;
+}
+
+.logo-nav p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Navigation */
+nav {
+    z-index: 99;
+    background-color: var(--background-blue-color);
+    width: 100%;
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-around;
+    top: 0;
+    color: var(--light-color);
+    padding: 1rem;
+}
+
+.links-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links-list ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.links-list ul li {
+    list-style: none;
+}
+
+.links-list ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.links-list ul li a img {
+    margin-left: 0.5rem;
+    width: 29px;
+    height: 24px;
+}
+
+.login-btn {
+    background-color: var(--yellow-color);
+    color: var(--background-blue-color);
+    padding: 16px 40px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.try-free-btn {
+    background-color: var(--blue-color);
+    color: var(--light-color);
+    padding: 16px 40px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-arrow-icon {
+    width: 10px;
+    height: 10px;
+}
+
+/* Hero */
+
+.hero {
+    position: relative;
+    padding: 140px 160px;
+    /* margin-top: 80px; */
+    gap: 80px;
+    height: 829px;
+}
+
+.hero div {
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(assets/Yellow-Siluet.svg) no-repeat right center / cover;
+    opacity: 0.3;
+}
+
+.section-image {
+    aspect-ratio: 3/2;
+    width: 100%;
+    max-width: 824px;
+}
+
+.header-content {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+/* Project management */
+
+.Project-management {
+    gap: 60px;
+}
+
+.work-management {
+    position: relative;
+}
+
+.work-management div {
+    z-index: 1;
+}
+
+.Project-management::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(assets/Irregular-Circle.svg) no-repeat left 60px;
+    opacity: 0.2;
+}
+
+/* Work together */
+
+.work-together {
+    gap: 100px;
+}
+
+.text-content {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}
+
+/* use as extension */
+.use-as-extention {
+    gap: 100px;
+}
+
+/* Customize it to your needs */
+.customize {
+    gap: 100px;
+}
+
+/* Choose your plan */
+.choose-your-plan {
+    text-align: center;
+}
+
+.choose-your-plan h2 {
+    line-height: 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.plan-card {
+    width: 472px;
+    border-radius: 10px;
+    border: 1px solid var(--yellow-color);
+    text-align: left;
+    height: 634px;
+    gap: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blue-plan-card {
+    width: 472px;
+    border-radius: 10px;
+    border: 1px solid var(--yellow-color);
+    background-color: var(--background-blue-color);
+    text-align: left;
+    height: 761px;
+    gap: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    color: var(--light-color);
+    justify-content: space-between;
+}
+
+.blue-plan-card h1 {
+    color: var(--yellow-color);
+}
+
+.blue-plan-card .plan-btn {
+    background-color: var(--blue-color);
+    color: var(--light-color);
+    border: none;
+}
+
+.plan-card div, .blue-plan-card div {
+    display: flex;
+    gap: 10px;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+}
+
+.plan-btn {
+    padding: 16px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--yellow-color);
+    background-color: var(--light-color);
+    width: 166px;
+}
+
+/* Your work */
+.your-work {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.your-work::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(assets/Irregular-Circle.svg) no-repeat left center;
+    opacity: 0.4;
+}
+
+.your-work h1 {
+    z-index: 1;
+    font-size: 4.5rem;
+    line-height: 0;
+}
+
+.your-work p {
+    z-index: 1;
+    width: 75%;
+}
+
+.your-work div {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* your data */
+
+.your-data {
+    gap: 0px;
+}
+
+.data-image {
+    width: 681px;
+}
+
+/* Our sponsors */
+
+.our-sponsors {
+    text-align: center;
+}
+
+.our-sponsors div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sponsor-logo {
+    width: auto;
+    height: 60px;
+    margin: 0 20px;
+}
+
+/* apps */
+
+.apps {
+    position: relative;
+}
+
+.apps div {
+    z-index: 1;
+}
+
+.apps::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(assets/Yellow-Siluet.svg) no-repeat center;
+    opacity: 0.4;
+}
+
+/* Testimonials */
+
+.testimonials {
+    align-items: center;
+}
+
+.testimonials-container {
+    display: flex;
+    gap: 32px;
+}
+
+.fake-slider {
+    display: flex;
+    gap: 20px;
+}
+
+.fake-slider li::marker {
+    font-size: 1.2rem;
+    color: var(--blue-color);
+}
+
+.fake-slider li:nth-child(even)::marker {
+    font-size: 1.2rem;
+    color: var(--background-blue-color);
+}
+
+.testimonials h2{
+    line-height: 0;
+}
+
+.quote-svg {
+    width: 86px;
+    height: auto;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    gap: 60px;
+    width: 471px;
+    height: auto;
+    box-shadow: 10px 15px 50px #0000001A ;
+    border-radius: 10px;
+}
+
+.blue-testimonial-card {
+    display: flex;
+    background-color: var(--blue-color);
+    color: var(--light-color);
+    flex-direction: column;
+    padding: 60px 40px;
+    gap: 60px;
+    width: 471px;
+    height: auto;
+    box-shadow: 10px 15px 50px #0000001A ;
+    border-radius: 10px;
+}
+
+.blue-testimonial-card div h3 {
+    color: var(--background-blue-color);
+}
+
+.user{
+    display: flex;
+    gap: 42px;
+}
+
+.user img{
+    width: 95px;
+    height: auto;
+}
+
+.user h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.user div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Free trial */
+
+.free-trial {
+    gap: 40px;
+    text-align: center;
+}
+
+.free-trial .button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.free-trial .logo-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.white-logo {
+    width: 60px;
+    height: 60px;
+}
+
+/* footer */
+
+.footer .content {
+    display: flex;
+    gap: 100px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.color-yello {
+    color: var(--yellow-color);
+}
+
+.credit {
+    border-top: 2px solid var(--blue-dark-color);
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footer-icon {
+    width: 19px;
+    height: 19px;
+}
+
+.credit-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.lang-item {
+    display: flex;
+    align-items: bottom;
+    gap: 5px;
+}
+
+.footer-logo {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
