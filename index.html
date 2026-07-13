@@ -11,10 +11,9 @@
 
 <body>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Navigation -->
-        <nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
             <!-- logo -->
             <div class="logo-nav">
                 <img src="assets/svg/logo-icon.svg" alt="logo">
@@ -24,45 +23,54 @@
             <!-- links, login & try whitespace free button-->
             <div class="links-list">
                 <ul>
-                    <li><a href="#">Products <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+                    <li class="links"><a href="#">Products <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
-                    <li><a href="#">Solutions <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+                    <li class="links"><a href="#">Solutions <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
-                    <li><a href="#">Resources <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+                    <li class="links"><a href="#">Resources <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
-                    <li><a href="#">Pricing <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+                    <li class="links"><a href="#">Pricing <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
                     <li><button class="login-btn">Login</button></li>
                     <li><button class="try-free-btn">Try Whitespace Free <img src="assets/svg/right-arrow.svg"
                                 class="right-arrow-icon" alt="dropdown"></button></li>
+                    <li><button class="dropdown-menu"><img src="assets/svg/dropdown-menu.svg" class="dropdown-icon" alt=""></button></li>
                 </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+
+    <main>
 
         <!-- Hero -->
-        <header class="hero text-img-section color-white bg-color-blue">
-            <div>
-                <h2 class="header-content">Get More Done with whitepace</h2><br>
-                <p class="text-content">Project management software that enables your teams to collaborate, plan,
-                    analyze
-                    and manage everyday tasks</p><br><br><br>
-                <button class="try-free-btn">Try Whitespace Free <img src="assets/svg/right-arrow.svg"
-                        class="right-arrow-icon" alt="dropdown"></button>
-            </div>
-            <div class="blue-bg section-image hero-img">
-                <img src="assets/png-jpg/hero.png" alt="">
+        <header class="hero">
+            <div class="container text-img-section color-white bg-color-blue">
+                <div>
+                    <h2 class="header-content">Get More Done with whitepace</h2><br>
+                    <p class="text-content">Project management software that enables your teams to collaborate, plan,
+                        analyze
+                        and manage everyday tasks</p><br><br><br>
+                    <button class="try-free-btn">Try Whitespace Free <img src="assets/svg/right-arrow.svg"
+                            class="right-arrow-icon" alt="dropdown"></button>
+                </div>
+                <div class="blue-bg section-image hero-img">
+                    <img src="assets/png-jpg/hero.png" alt="">
+                </div>
             </div>
         </header>
 
         <!-- Work management -->
-
         <section class="work-management bg-color-white">
+
             <!-- Project management -->
-            <div class="Project-management text-img-section">
+            <div class="project-management text-img-section">
                 <div>
                     <h2 class="header-content">Project <br><span class="crossing-out">Management</span></h2><br>
                     <p class="text-content">Images, videos, PDFs and audio files are supported. Create math expressions
@@ -130,7 +138,7 @@
         <!-- Choose your plan -->
         <section class="choose-your-plan bg-color-white">
             <h2 class="header-content">Choose <span class="crossing-out">Your plan</span></h2>
-            <p>Whether you want to get organized, keep your personal life on track, or boost workplace productivity,
+            <p class="text-content">Whether you want to get organized, keep your personal life on track, or boost workplace productivity,
                 Evernote has the right plan for you.</p>
             <div class="card-container">
                 <!-- card 1 -->
@@ -236,7 +244,7 @@
                     <button class="try-free-btn">Read more <img src="assets/svg/right-arrow.svg"
                             class="right-arrow-icon" alt="dropdown"></button>
                 </div>
-                <div class="data-img-width">
+                <div class="data-img">
                     <img src="assets/png-jpg/data.png" alt="Data image">
                 </div>
             </div>
@@ -377,7 +385,7 @@
                 <div class="info">
                     <h2>Try it today</h2>
                     <p>Get started for free. Add your whole team as your needs grow.</p>
-                    <div>
+                    <div class="try-btn-container">
                         <button class="try-free-btn">Start today <img src="assets/svg/right-arrow.svg"
                                 class="right-arrow-icon" alt="dropdown"></button>
                     </div>

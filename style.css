@@ -10,13 +10,21 @@
 }
 
 /* var */
+
 :root {
+
+    /* color */
     --background-blue-color: #043873;
     --light-color: #ffffff;
     --yellow-color: #FFE492;
     --blue-color: #4F9CF9;
     --cyan-color: #C4DEFD;
     --blue-dark-color: #2E4E73;
+
+    /* Responsive */
+    --lg: 932px;
+    --xl: 1140px;
+    --xxl: 1340px;
 }
 
 body {
@@ -54,6 +62,18 @@ body {
     background: url(assets/svg/crossing-out.svg) no-repeat left center / contain;
 }
 
+.header-content {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.text-content {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.01rem;
+}
+
 .crossing-out-2 {
     position: relative;
 }
@@ -82,16 +102,25 @@ body {
 }
 
 section {
-    padding: 140px 100px;
+    padding: 140px 0px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
     gap: 90px;
+}
+
+section div {
+    max-width: 1400px;
 }
 
 a {
     text-decoration: none;
     color: var(--light-color);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
 }
 
 .color-white {
@@ -103,6 +132,7 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1400px;
 }
 
 .blue-bg {
@@ -112,15 +142,22 @@ a {
 /* Navigation */
 
 nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav .container {
+    padding: 10px 0px;
     z-index: 99;
     background-color: var(--background-blue-color);
-    width: 100%;
     /* position: fixed; */
     display: flex;
     justify-content: space-between;
     top: 0;
     color: var(--light-color);
-    padding: 1rem 100px;
+    width: 100%;
+    max-width: 1400px;
 }
 
 .links-list {
@@ -151,6 +188,17 @@ nav {
     margin-left: 0.5rem;
     width: 29px;
     height: 24px;
+}
+
+.dropdown-menu {
+    display: none;
+    border: none;
+    background-color: transparent;
+}
+
+.dropdown-icon {
+    width: 42px;
+    height: auto;
 }
 
 .login-btn {
@@ -205,15 +253,21 @@ nav {
 /* Hero */
 
 .hero {
+    display: flex;
+    justify-content: center;
+}
+
+.hero .container {
     position: relative;
-    padding: 140px 100px;
+    background: transparent;
     /* margin-top: 80px; */
     gap: 80px;
     height: 829px;
+    width: 100%;
+    max-width: 1400px;
 }
 
 .hero-img {
-    min-width: none;
     aspect-ratio: 11/8;
 }
 
@@ -229,22 +283,7 @@ nav {
     opacity: 0.5;
 }
 
-.header-content {
-    font-size: 4rem;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-}
-
 /* Project management */
-
-.Project-management {
-    gap: 100px;
-}
-
-.project-management-img {
-    min-width: 745px;
-    aspect-ratio: 748 / 547;
-}
 
 .work-management {
     position: relative;
@@ -253,6 +292,16 @@ nav {
 .work-management div {
     z-index: 1;
 }
+
+.project-management {
+    gap: 100px;
+}
+
+.project-management-img {
+    max-width: 745px;
+    aspect-ratio: 748 / 547;
+}
+
 
 .Project-management::before {
     content: "";
@@ -269,13 +318,13 @@ nav {
 }
 
 .work-together-img {
-    max-width: 710px;
+    overflow: hidden;
+    max-width: 610px;
 }
 
-.text-content {
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: -0.01rem;
+.work-together-img img {
+    width: 100%;
+    height: auto;
 }
 
 /* use as extension */
@@ -318,6 +367,7 @@ nav {
 
 .plan-card {
     width: 472px;
+    max-width: 472px;
     border-radius: 10px;
     border: 1px solid var(--yellow-color);
     text-align: left;
@@ -415,11 +465,17 @@ nav {
     gap: 100px;
 }
 
-.data-img-width {
+.data-img {
+    display: flex;
     width: 100%;
-    max-width: 824px;
+    overflow: hidden;
     justify-content: right;
-    transform: translateX(38px);
+}
+
+.data-img img {
+    transform: translateX(30px);
+    width: 100%;
+    height: auto;
 }
 
 /* Our sponsors */
@@ -452,6 +508,11 @@ nav {
 
 .apps-img {
     max-width: 582px;
+}
+
+.apps-img img {
+    width: 100%;
+    height: auto;
 }
 
 .apps div {
@@ -508,16 +569,17 @@ nav {
 }
 
 .quote-svg {
-    width: 86px;
+    max-width: 86px;
     height: auto;
 }
 
 .testimonial-card {
     display: flex;
     flex-direction: column;
+    aspect-ratio: 11 / 12;
     padding: 60px 40px;
     gap: 60px;
-    width: 471px;
+    max-width: 471px;
     height: auto;
     box-shadow: 10px 15px 50px #0000001A;
     border-radius: 10px;
@@ -529,6 +591,7 @@ nav {
     color: var(--light-color);
     flex-direction: column;
     padding: 60px 40px;
+    aspect-ratio: 11 / 12;
     gap: 60px;
     width: 471px;
     height: auto;
@@ -615,6 +678,7 @@ nav {
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
 }
 
@@ -639,4 +703,373 @@ nav {
     display: flex;
     gap: 32px;
     align-items: center;
+}
+
+
+/* Responsive */
+
+/* Extra extra large ( <= 1400px )*/
+@media (max-width: 1400px) {
+
+    /* Navigation */
+    nav .container {
+        max-width: var(--xxl);
+    }
+
+    /* Hero */
+    .hero .container {
+        max-width: var(--xxl);
+    }
+
+    .hero-img {
+        max-width: 645px;
+    }
+
+    /* Project management */
+    .project-management {
+        max-width: var(--xxl);
+    }
+
+    /* Work together */
+    .work-together {
+        max-width: var(--xxl);
+        gap: 100px;
+    }
+
+    .work-together-img {
+        max-width: 520px;
+    }
+
+    /* Use as extention */
+    .use-as-extention {
+        max-width: var(--xxl);
+    }
+
+    .extention-img {
+        max-width: 660px;
+    }
+
+    /* Customize */
+    .customize {
+        max-width: var(--xxl);
+    }
+
+    /* Choose your plan */
+    .card-container {
+        max-width: var(--xxl);
+    }
+
+    .blue-plan-card {
+        width: 480px;
+    }
+
+    /* Your data */
+    .your-data {
+        max-width: var(--xxl);
+    }
+
+    /* Our sponsors */
+    .sponsors-container {
+        max-width: var(--xxl);
+    }
+
+    /* Apps */
+    .your-data {
+        max-width: var(--xxl);
+    }
+
+    /* Testimonials */
+    .testimonials-container {
+        max-width: var(--xxl);
+    }
+
+    .testimonial-card,
+    .blue-testimonial-card {
+        width: 430px;
+    }
+
+    /* Footer */
+    .footer {
+        max-width: var(--xxl);
+    }
+}
+
+/* Extra large ( <= 1200px )*/
+@media (max-width: 1200px) {
+
+    /* Header text */
+    .header-content {
+        font-size: 3.5rem;
+    }
+
+    /* Navigation */
+    nav .container {
+        max-width: var(--xl);
+    }
+
+    /* Hero */
+    .hero .container {
+        max-width: var(--xl);
+    }
+
+    .hero-img {
+        max-width: 785px;
+    }
+
+    /* Project management */
+    .project-management {
+        max-width: var(--xl);
+    }
+
+    /* Work together */
+    .work-together {
+        max-width: var(--xl);
+    }
+
+    .work-together-img {
+        max-width: 420px;
+    }
+
+    /* Use as extention */
+    .use-as-extention {
+        max-width: var(--xl);
+    }
+
+    .extention-img {
+        max-width: 560px;
+    }
+
+    /* Customize */
+    .customize {
+        max-width: var(--xl);
+    }
+
+    .customize-img {
+        max-width: 620px;
+    }
+
+    /* Choose your plan */
+    .card-container {
+        max-width: var(--xl);
+    }
+
+    .blue-plan-card {
+        width: 400px;
+    }
+
+    /* Your data */
+    .your-data {
+        max-width: var(--xl);
+    }
+
+    /* Our sponsors */
+    .sponsors-container {
+        max-width: var(--xl);
+    }
+
+    /* Apps */
+    .your-data {
+        max-width: var(--xl);
+    }
+
+    /* Testimonials */
+    .testimonials-container {
+        max-width: var(--xl);
+    }
+
+    .testimonial-card,
+    .blue-testimonial-card {
+        width: 380px;
+    }
+
+    /* Footer */
+    .footer {
+        max-width: var(--xl);
+    }
+}
+
+/* Dropdown menu */
+@media (max-width: 1102px) {
+    .links {
+        display: none;
+    }
+
+    .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Large ( <= 992px ) */
+@media (max-width: 992px) {
+
+    /* Header text */
+    .header-content {
+        font-size: 3rem;
+    }
+
+    /* Try it free */
+    .try-free-btn {
+        min-width: 210px;
+    }
+
+    .text-content {
+        font-size: 0.8rem;
+    }
+
+    /* Navigation */
+    nav .container {
+        max-width: var(--lg);
+    }
+
+    .links-list ul {
+        gap: 10;
+    }
+
+    .logo-nav img {
+        width: 30px;
+        height: 22px;
+    }
+
+    .logo-nav p {
+        font-size: 1.3rem;
+    }
+
+    .login-btn {
+        padding: 10px 20px;
+    }
+
+    .try-free-btn {
+        min-width: 120px;
+        width: 230px;
+        padding: 10px 20px;
+    }
+
+    /* Hero */
+    .hero .container {
+        max-width: var(--lg);
+        height: 700px;
+    }
+
+    .hero::before {
+        background: url(assets/svg/yellow-siluet.svg) no-repeat right center;
+    }
+
+    .hero-img {
+        max-width: 450px;
+    }
+
+    /* Project management */
+    .project-management {
+        max-width: var(--lg);
+    }
+
+    .project-management-img {
+        width: 1200px;
+    }
+
+    /* Work together */
+    .work-together {
+        max-width: var(--lg);
+    }
+
+    .work-together-img {
+        max-width: 380px;
+    }
+
+    /* Use as extention */
+    .use-as-extention {
+        max-width: var(--lg);
+    }
+
+    .extention-img {
+        width: 770px;
+    }
+
+    .extention-img {
+        max-width: 480px;
+    }
+
+    /* Customize */
+    .customize {
+        max-width: var(--lg);
+    }
+
+    .customize-img {
+        max-width: 600px;
+    }
+
+    /* Choose your plan */
+
+    .card-container {
+        max-width: var(--lg);
+    }
+
+    .blue-plan-card {
+        width: 480px;
+    }
+
+    /* Your work */
+    .your-work {
+        line-height: normal;
+    }
+
+    /* Your data */
+    .your-data {
+        max-width: var(--lg);
+    }
+
+    /* Our sponsors */
+    .sponsors-container {
+        max-width: var(--lg);
+    }
+
+    /* Apps */
+    .your-data {
+        max-width: var(--lg);
+    }
+
+    /* Testimonials */
+    .testimonials-container {
+        max-width: var(--lg);
+    }
+
+    .testimonial-card,
+    .blue-testimonial-card {
+        width: 288px;
+        height: auto;
+        gap: 30px;
+        font-size: 0.8rem;
+        padding: 30px 20px;
+    }
+
+    .user img {
+        width: 50px;
+        height: auto;
+    }
+
+    .user {
+        gap: 10px;
+    }
+
+    .user h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .quote-svg {
+        max-width: 66px;
+        height: auto;
+    }
+
+    /* Footer */
+    .footer {
+        max-width: var(--lg);
+        padding: 50px 0px;
+    }
+
+    
+
+    .info .try-free-btn {
+        width: 150px;
+    }
 }
