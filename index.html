@@ -22,23 +22,33 @@
 
             <!-- links, login & try whitespace free button-->
             <div class="links-list">
-                <ul>
-                    <li class="links"><a href="#">Products <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+
+                <!-- desktop -->
+                <ul class="desktop-display">
+                    <li><a href="#">Products <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
-                    <li class="links"><a href="#">Solutions <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+                    <li><a href="#">Solutions <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
-                    <li class="links"><a href="#">Resources <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+                    <li><a href="#">Resources <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
-                    <li class="links"><a href="#">Pricing <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
+                    <li><a href="#">Pricing <img src="assets/svg/down-arrow.svg" class="dropdown-icon"
                                 alt="dropdown"></a>
                     </li>
                     <li><button class="login-btn nav-login-btn">Login</button></li>
-                    <li><button class="try-free-btn nav-try-free-btn">Try Whitespace Free <img src="assets/svg/right-arrow.svg"
-                                class="right-arrow-icon" alt="dropdown"></button></li>
-                    <li><button class="dropdown-menu"><img src="assets/svg/dropdown-menu.svg" class="dropdown-icon" alt=""></button></li>
+                    <li><button class="try-free-btn nav-try-free-btn">Try Whitespace Free <img
+                                src="assets/svg/right-arrow.svg" class="right-arrow-icon" alt="dropdown"></button></li>
+                </ul>
+
+                <!-- tab & mobile -->
+                <ul class="mobile-tab-display">
+                    <li><button class="login-btn nav-login-btn">Login</button></li>
+                    <li><button class="try-free-btn nav-try-free-btn">Try Whitespace Free <img
+                                src="assets/svg/right-arrow.svg" class="right-arrow-icon" alt="dropdown"></button></li>
+                    <li><button class="dropdown-menu"><img src="assets/svg/dropdown-menu.svg" class="dropdown-icon"
+                                alt=""></button></li>
                 </ul>
             </div>
         </div>
@@ -138,7 +148,8 @@
         <!-- Choose your plan -->
         <section class="choose-your-plan bg-color-white">
             <h2 class="header-content">Choose <span class="crossing-out">Your plan</span></h2>
-            <p class="text-content">Whether you want to get organized, keep your personal life on track, or boost workplace productivity,
+            <p class="text-content">Whether you want to get organized, keep your personal life on track, or boost
+                workplace productivity,
                 Evernote has the right plan for you.</p>
             <div class="card-container">
                 <!-- card 1 -->
@@ -221,7 +232,7 @@
 
         <!-- Your work -->
         <section class="your-work bg-color-blue color-white">
-            <h1>Your work, everywhere <span class="crossing-out-2">you are</span></h1>
+            <h2 class="header-content">Your work, everywhere <span class="crossing-out-2">you are</span></h2>
             <p>Access your notes from your computer, phone or tablet by synchronising with various services, including
                 whitepace, Dropbox and OneDrive. The app is available on Windows, macOS, Linux, Android and iOS. A
                 terminal
@@ -244,7 +255,7 @@
                     <button class="try-free-btn">Read more <img src="assets/svg/right-arrow.svg"
                             class="right-arrow-icon" alt="dropdown"></button>
                 </div>
-                <div class="data-img">
+                <div class="section-img data-img">
                     <img src="assets/png-jpg/data.png" alt="Data image">
                 </div>
             </div>
@@ -263,7 +274,7 @@
 
         <!-- Apps -->
         <section class="apps bg-color-blue">
-            <div class="your-data text-img-section flex-reverse color-white">
+            <div class="container text-img-section flex-reverse color-white">
                 <div>
                     <h2 class="header-content">Work with Your Favorite Apps Using whitepace</h2><br>
                     <p class="text-content">Whitepace teams up with your favorite software. Integrate with over 1000+
