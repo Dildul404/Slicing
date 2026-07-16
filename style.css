@@ -1,27 +1,21 @@
-/* import fonts */
+/*================================================
+ Import Fonts
+=================================================*/
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-/* var */
-
+/*================================================
+ Variables
+=================================================*/
 :root {
-
-    /* color */
+    /* Colors */
     --background-blue-color: #043873;
     --light-color: #ffffff;
-    --yellow-color: #FFE492;
-    --blue-color: #4F9CF9;
-    --cyan-color: #C4DEFD;
-    --blue-dark-color: #2E4E73;
+    --yellow-color: #ffe492;
+    --blue-color: #4f9cf9;
+    --cyan-color: #c4defd;
+    --blue-dark-color: #2e4e73;
 
-    /* Responsive */
+    /* Responsive breakpoints */
     --sm: 516px;
     --md: 708px;
     --lg: 932px;
@@ -29,28 +23,59 @@
     --xxl: 1340px;
 }
 
+/*================================================
+ Reset & Base
+=================================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
 body {
     background-color: var(--background-blue-color);
 }
 
-/* global styles */
-
-.section-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+section {
+    padding: 140px 30px;
+    overflow-x: clip;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
 }
 
+section div {
+    max-width: 1400px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+/*================================================
+ Reusable Components
+=================================================*/
+.section-image,
 .section-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.crossing-out {
-    /* overflow: hidden; */
+.section-image {
+    height: auto;
+}
+
+.crossing-out,
+.crossing-out-2 {
     display: inline-block;
     position: relative;
+}
+
+.crossing-out {
     z-index: 2;
 }
 
@@ -65,6 +90,17 @@ body {
     background: url(assets/svg/crossing-out.svg) no-repeat left center / contain;
 }
 
+.crossing-out-2::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 35%;
+    left: -20px;
+    height: 100%;
+    width: 120%;
+    background: url(assets/svg/crossing-out-2.svg) no-repeat center / contain;
+}
+
 .header-content {
     font-size: clamp(2.2rem, 4vw, 4rem);
     font-weight: 700;
@@ -77,23 +113,6 @@ body {
     letter-spacing: -0.01rem;
 }
 
-.crossing-out-2 {
-    /* overflow: hidden; */
-    display: inline-block;
-    position: relative;
-}
-
-.crossing-out-2::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 35%;
-    left: -20px;
-    height: 100%;
-    width: 120%;
-    background: url(assets/svg/crossing-out-2.svg) no-repeat center / contain;
-}
-
 .bg-color-white {
     background-color: var(--light-color);
 }
@@ -104,25 +123,6 @@ body {
 
 .flex-reverse {
     flex-direction: row-reverse;
-}
-
-section {
-    padding: 140px 30px;
-    overflow-x: clip;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 90px;
-}
-
-section div {
-    /* overflow-x: clip; */
-    max-width: 1400px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--light-color);
 }
 
 .color-white {
@@ -144,19 +144,62 @@ a {
     background-color: var(--cyan-color);
 }
 
-/* Navigation */
+/*================================================
+ Buttons
+=================================================*/
+.login-btn,
+.try-free-btn,
+.plan-btn {
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+}
 
+.login-btn {
+    background-color: var(--yellow-color);
+    color: var(--background-blue-color);
+    padding: 16px 40px;
+    border: none;
+}
+
+.try-free-btn {
+    min-width: 171px;
+    background-color: var(--blue-color);
+    color: var(--light-color);
+    padding: 16px 22px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.plan-btn {
+    padding: 16px 40px;
+    border: 1px solid var(--yellow-color);
+    background-color: var(--light-color);
+    width: 166px;
+}
+
+.right-arrow-icon {
+    width: 10px;
+    height: 10px;
+}
+
+/*================================================
+ Navigation
+=================================================*/
 nav {
-    padding: 0px 30px;
+    padding: 0 30px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 nav .container {
-    padding: 10px 0px;
+    padding: 10px 0;
     z-index: 99;
-    /* position: fixed; */
     display: flex;
     justify-content: space-between;
     top: 0;
@@ -200,8 +243,8 @@ nav .container {
     background-color: transparent;
 }
 
-
-.mobile-tab-display, .mobile-tab-display li {
+.mobile-tab-display,
+.mobile-tab-display li {
     display: none;
 }
 
@@ -210,39 +253,6 @@ nav .container {
     height: auto;
 }
 
-.login-btn {
-    background-color: var(--yellow-color);
-    color: var(--background-blue-color);
-    padding: 16px 40px;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
-    border: none;
-}
-
-.try-free-btn {
-    min-width: 171px;
-    background-color: var(--blue-color);
-    color: var(--light-color);
-    padding: 16px 22px;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.right-arrow-icon {
-    width: 10px;
-    height: 10px;
-}
-
-/* logo */
 .logo-nav {
     display: flex;
     align-items: center;
@@ -259,19 +269,19 @@ nav .container {
     font-weight: 700;
 }
 
-/* Hero */
-
+/*================================================
+ Hero
+=================================================*/
 .hero {
-    padding: 0px 30px;
+    padding: 0 30px;
     display: flex;
     justify-content: center;
 }
 
 .hero .container {
-    padding: 120px 0px;
+    padding: 120px 0;
     position: relative;
     background: transparent;
-    /* margin-top: 80px; */
     gap: 80px;
     height: 829px;
     width: 100%;
@@ -280,7 +290,7 @@ nav .container {
 
 .hero-img {
     max-width: 650px;
-    aspect-ratio: 11/8;
+    aspect-ratio: 11 / 8;
 }
 
 .hero div {
@@ -295,8 +305,9 @@ nav .container {
     opacity: 0.5;
 }
 
-/* Project management */
-
+/*================================================
+ Section Styles
+=================================================*/
 .work-management {
     position: relative;
 }
@@ -326,8 +337,6 @@ nav .container {
     aspect-ratio: 748 / 547;
 }
 
-/* Work together */
-
 .work-together {
     gap: 100px;
 }
@@ -336,8 +345,6 @@ nav .container {
     max-width: 610px;
 }
 
-/* use as extension */
-
 .use-as-extention {
     width: 100%;
     gap: 100px;
@@ -345,21 +352,18 @@ nav .container {
 
 .extention-img {
     max-width: 650px;
-    aspect-ratio: 10/7;
+    aspect-ratio: 10 / 7;
 }
-
-/* Customize it to your needs */
 
 .customize {
     gap: 100px;
 }
 
 .customize-img {
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
     max-width: 714px;
 }
 
-/* Choose your plan */
 .choose-your-plan {
     width: 100%;
     text-align: center;
@@ -372,12 +376,12 @@ nav .container {
     align-items: center;
 }
 
-.plan-card {
+.plan-card,
+.blue-plan-card {
     max-width: 466px;
     border-radius: 10px;
     border: 1px solid var(--yellow-color);
     text-align: left;
-    height: 634px;
     gap: 20px;
     padding: 40px;
     display: flex;
@@ -385,19 +389,14 @@ nav .container {
     justify-content: space-between;
 }
 
+.plan-card {
+    height: 634px;
+}
+
 .blue-plan-card {
-    max-width: 466px;
-    border-radius: 10px;
-    border: 1px solid var(--yellow-color);
     background-color: var(--background-blue-color);
-    text-align: left;
-    height: 761px;
-    gap: 20px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
     color: var(--light-color);
-    justify-content: space-between;
+    height: 761px;
 }
 
 .blue-plan-card h1 {
@@ -421,16 +420,6 @@ nav .container {
     height: 18px;
 }
 
-.plan-btn {
-    padding: 16px 40px;
-    border-radius: 8px;
-    border: 1px solid var(--yellow-color);
-    background-color: var(--light-color);
-    width: 166px;
-}
-
-/* Your work */
-
 .your-work {
     position: relative;
     text-align: center;
@@ -451,7 +440,6 @@ nav .container {
 
 .your-work h2 {
     z-index: 1;
-    /* font-size: 4.5rem; */
 }
 
 .your-work p {
@@ -464,8 +452,6 @@ nav .container {
     display: flex;
     justify-content: center;
 }
-
-/* your data */
 
 .your-data {
     gap: 100px;
@@ -480,8 +466,6 @@ nav .container {
     width: 100%;
     height: auto;
 }
-
-/* Our sponsors */
 
 .our-sponsors {
     text-align: center;
@@ -498,8 +482,6 @@ nav .container {
     width: auto;
     height: 60px;
 }
-
-/* apps */
 
 .apps {
     position: relative;
@@ -526,8 +508,6 @@ nav .container {
     opacity: 0.4;
 }
 
-/* Testimonials */
-
 .testimonials {
     align-items: center;
 }
@@ -536,31 +516,24 @@ nav .container {
     display: grid;
     grid-template-columns: repeat(3, 426px);
     gap: 30px;
-    padding: 30px 0px;
+    padding: 30px 0;
 }
 
-.testimonial-card {
+.testimonial-card,
+.blue-testimonial-card {
     display: flex;
     flex-direction: column;
     aspect-ratio: 11 / 12;
     padding: 60px 40px;
     gap: 60px;
     height: auto;
-    box-shadow: 10px 15px 50px #0000001A;
+    box-shadow: 10px 15px 50px #0000001a;
     border-radius: 10px;
 }
 
 .blue-testimonial-card {
-    display: flex;
     background-color: var(--blue-color);
     color: var(--light-color);
-    flex-direction: column;
-    padding: 60px 40px;
-    aspect-ratio: 11 / 12;
-    gap: 60px;
-    height: auto;
-    box-shadow: 10px 15px 50px #0000001A;
-    border-radius: 10px;
 }
 
 .quote-svg {
@@ -614,14 +587,9 @@ nav .container {
     background-color: var(--background-blue-color);
 }
 
-
 .slider-3 {
     background-color: var(--blue-color);
 }
-
-
-
-/* Free trial */
 
 .free-trial {
     gap: 40px;
@@ -648,10 +616,11 @@ nav .container {
     height: 60px;
 }
 
-/* footer */
-
+/*================================================
+ Footer
+=================================================*/
 footer {
-    padding: 0px 30px;
+    padding: 0 30px;
     display: flex;
     justify-content: center;
 }
@@ -683,7 +652,6 @@ footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
 }
 
 .footer-icon {
@@ -699,7 +667,7 @@ footer {
 
 .lang-item {
     display: flex;
-    align-items: bottom;
+    align-items: baseline;
     gap: 5px;
 }
 
@@ -709,178 +677,105 @@ footer {
     align-items: center;
 }
 
+/*================================================
+ Responsive
+=================================================*/
 
-/* Responsive */
-
-/* Extra extra large ( <= 1400px )*/
+/* Large desktop (≤ 1400px) */
 @media (max-width: 1400px) {
-
-    /* Navigation */
-    nav .container {
+    /* Shared layout */
+    nav .container,
+    .hero .container,
+    .project-management,
+    .work-together,
+    .use-as-extention,
+    .customize,
+    .your-data,
+    .sponsors-container,
+    .testimonials-container,
+    .footer {
         max-width: var(--xxl);
     }
 
-    /* Hero */
-    .hero .container {
-        max-width: var(--xxl);
-    }
-
-    /* Project management */
-    .project-management {
-        max-width: var(--xxl);
-    }
-
-    /* Work together */
-    .work-together {
-        max-width: var(--xxl);
-        gap: 100px;
-    }
-
+    /* Images */
     .work-together-img {
         max-width: 520px;
-    }
-
-    /* Use as extention */
-    .use-as-extention {
-        max-width: var(--xxl);
     }
 
     .extention-img {
         max-width: 650px;
     }
-
-    /* Customize */
-    .customize {
-        max-width: var(--xxl);
-    }
-
-    /* Choose your plan */
-
-    /* Your data */
-    .your-data {
-        max-width: var(--xxl);
-    }
-
-    /* Our sponsors */
-    .sponsors-container {
-        max-width: var(--xxl);
-    }
-
-    /* Apps */
-    .your-data {
-        max-width: var(--xxl);
-    }
-
-    /* Testimonials */
-    .testimonials-container {
-        max-width: var(--xxl);
-    }
-
-    /* Footer */
-    .footer {
-        max-width: var(--xxl);
-    }
 }
 
-/* Extra large ( <= 1200px )*/
+/* Desktop / laptop (≤ 1200px) */
 @media (max-width: 1200px) {
-
-    /* Header text */
-    /* .header-content {
-        font-size: 3.5rem;
-    } */
-
     /* Navigation */
     nav .container {
         max-width: var(--xl);
     }
 
-    .desktop-display, .desktop-display li {
+    /* Navigation */
+    .desktop-display,
+    .desktop-display li {
         display: none;
     }
 
-    .mobile-tab-display, .mobile-tab-display li {
+    .mobile-tab-display,
+    .mobile-tab-display li {
         display: block;
     }
 
-    .login-btn {
+    .login-btn,
+    .try-free-btn {
         padding: 10px 20px;
     }
 
     .try-free-btn {
         min-width: 120px;
         width: 230px;
-        padding: 10px 20px;
     }
 
-    /* Hero */
-    .hero .container {
+    .hero .container,
+    .project-management,
+    .work-together,
+    .use-as-extention,
+    .customize,
+    .your-data,
+    .sponsors-container,
+    .apps .container,
+    .footer {
         max-width: var(--xl);
     }
 
+    /* Images */
     .hero-img {
         max-width: 550px;
-    }
-
-    /* Project management */
-    .project-management {
-        max-width: var(--xl);
     }
 
     .project-management-img {
         max-width: 745px;
     }
 
-    /* Work together */
-    .work-together {
-        max-width: var(--xl);
-    }
-
     .work-together-img {
         max-width: 420px;
-    }
-
-    /* Use as extention */
-    .use-as-extention {
-        max-width: var(--xl);
     }
 
     .extention-img {
         max-width: 550px;
     }
 
-    /* Customize */
-    .customize {
-        max-width: var(--xl);
-    }
-
     .customize-img {
         max-width: 550px;
     }
 
-    /* Choose your plan */
+    /* Pricing & data */
     .card-container {
         grid-template-columns: repeat(3, 360px);
         gap: 30px;
     }
 
-    /* Your data */
-    .your-data {
-        max-width: var(--xl);
-    }
-
     .data-img {
         max-width: 520px;
-    }
-
-    /* Our sponsors */
-    .sponsors-container {
-        max-width: var(--xl);
-    }
-
-    /* Apps */
-    .apps .container {
-        max-width: var(--xl);
     }
 
     /* Testimonials */
@@ -889,13 +784,7 @@ footer {
         grid-template-columns: repeat(3, 360px);
     }
 
-    .testimonial-card {
-        padding: 50px 30px;
-        gap: 50px;
-        height: auto;
-        border-radius: 8px;
-    }
-
+    .testimonial-card,
     .blue-testimonial-card {
         padding: 50px 30px;
         gap: 50px;
@@ -917,37 +806,17 @@ footer {
     .user h3 {
         font-size: 1.3rem;
     }
-
-    /* Footer */
-    .footer {
-        max-width: var(--xl);
-    }
 }
 
-/* Large ( <= 992px ) */
+/* Tablet landscape (≤ 992px) */
 @media (max-width: 992px) {
-
-    /* Header text */
-    /* .header-content {
-        font-size: 3rem;
-    } */
-
-    /* Try it free */
-    .try-free-btn {
-        min-width: 210px;
-    }
-
-    /* .text-content {
-        font-size: 0.8rem;
-    } */
-
     /* Navigation */
     nav .container {
         max-width: var(--lg);
     }
 
     .links-list ul {
-        gap: 10;
+        gap: 10px;
     }
 
     .logo-nav img {
@@ -959,14 +828,14 @@ footer {
         font-size: 1.3rem;
     }
 
-    .login-btn {
+    .login-btn,
+    .try-free-btn {
         padding: 10px 20px;
     }
 
     .try-free-btn {
         min-width: 120px;
         width: 230px;
-        padding: 10px 20px;
     }
 
     /* Hero */
@@ -984,8 +853,12 @@ footer {
         max-width: 450px;
     }
 
-    /* Project management */
-    .project-management {
+    .project-management,
+    .work-together,
+    .use-as-extention,
+    .customize,
+    .your-data,
+    .sponsors-container {
         max-width: var(--lg);
     }
 
@@ -994,19 +867,9 @@ footer {
         max-width: 765px;
     }
 
-    /* Work together */
-    .work-together {
-        max-width: var(--lg);
-    }
-
     .work-together-img {
         min-width: 300px;
         max-width: 380px;
-    }
-
-    /* Use as extention */
-    .use-as-extention {
-        max-width: var(--lg);
     }
 
     .extention-img {
@@ -1014,56 +877,35 @@ footer {
         max-width: 500px;
     }
 
-    /* Customize */
-    .customize {
-        max-width: var(--lg);
-    }
-
     .customize-img {
         min-width: 300px;
         max-width: 450px;
     }
 
-    /* Choose your plan */
+    /* Horizontal scrolling plan cards */
     .card-container {
         overflow-x: auto;
         scrollbar-width: none;
         max-width: calc(100% + 60px);
-        padding: 0px 30px;
+        padding: 0 30px;
     }
 
-    /* Your work */
     .your-work {
         line-height: normal;
     }
 
-    /* Your data */
-    .your-data {
-        max-width: var(--lg);
-    }
-
+    /* Data image and testimonial card sizing */
     .data-img {
         min-width: 360px;
         max-width: 420px;
     }
 
-    /* Our sponsors */
-    .sponsors-container {
-        max-width: var(--lg);
-    }
-
-    /* Apps */
-    .your-data {
-        max-width: var(--lg);
-    }
-
-    /* Testimonials */
     .testimonials-container {
         overflow-x: auto;
         scrollbar-width: none;
         grid-template-columns: repeat(3, 370px);
         max-width: calc(100% + 60px);
-        padding: 30px 30px;
+        padding: 30px;
     }
 
     .user img {
@@ -1085,10 +927,9 @@ footer {
         height: auto;
     }
 
-    /* Footer */
     .footer {
         max-width: var(--lg);
-        padding: 50px 0px;
+        padding: 50px 0;
     }
 
     .info .try-free-btn {
@@ -1096,10 +937,9 @@ footer {
     }
 }
 
-/* Medium ( <= 768px ) */
+/* Tablet portrait (≤ 768px) */
 @media (max-width: 768px) {
-
-    /* section template */
+    /* Layout */
     .text-img-section {
         text-align: center;
         align-items: center;
@@ -1111,20 +951,6 @@ footer {
         display: inline-block;
     }
 
-    /* Header text */
-    /* .header-content {
-        font-size: 2.5rem;
-    } */
-
-    /* Try it free */
-    .try-free-btn {
-        min-width: 110px;
-    }
-
-    /* .text-content {
-        font-size: 0.7rem;
-    } */
-
     /* Navigation */
     nav .container {
         max-width: var(--md);
@@ -1134,22 +960,19 @@ footer {
         gap: 0;
     }
 
-    .nav-login-btn {
-        display: none;
-    }
-
+    .nav-login-btn,
     .nav-try-free-btn {
         display: none;
     }
 
-    .login-btn {
+    .login-btn,
+    .try-free-btn {
         padding: 10px 20px;
     }
 
     .try-free-btn {
         min-width: 120px;
         width: 230px;
-        padding: 10px 20px;
     }
 
     /* Hero */
@@ -1162,85 +985,48 @@ footer {
         background: url(assets/svg/yellow-siluet.svg) no-repeat right center;
     }
 
-    .hero-img {
+    .hero-img,
+    .project-management-img,
+    .work-together-img,
+    .extention-img,
+    .customize-img,
+    .data-img {
         max-width: 525px;
     }
 
-    /* Project management */
-    .project-management {
-        max-width: var(--md);
-    }
-
-    .project-management-img {
-        max-width: 525px;
-    }
-
-    /* Work together */
-    .work-together {
-        max-width: var(--md);
-    }
-
-    .work-together-img {
-        max-width: 525px;
-    }
-
-    /* Use as extention */
-    .use-as-extention {
-        max-width: var(--md);
-    }
-
-    .extention-img {
-        max-width: 525px;
-    }
-
-    /* Customize */
-    .customize {
-        max-width: var(--md);
-    }
-
-    .customize-img {
-        max-width: 525px;
-    }
-
-    /* Choose your plan */
-
-    .card-container {
-        max-width: calc(100% + 60px);
-        padding: 0px 30px;
-    }
-
-    /* Your work */
-    .your-work {
-        line-height: normal;
-    }
-
-    /* Your data */
+    .project-management,
+    .work-together,
+    .use-as-extention,
+    .customize,
     .your-data {
         max-width: var(--md);
     }
 
-    .data-img {
-        max-width: 525px;
+    .card-container {
+        max-width: calc(100% + 60px);
+        padding: 0 30px;
+    }
+
+    .your-work {
+        line-height: normal;
     }
 
     .data-img img {
         transform: none;
     }
 
-    /* Our sponsors */
+    /* Sponsors & apps */
     .sponsors-container {
         flex-direction: column;
         gap: 100px;
         max-width: var(--md);
     }
 
-    /* Apps */
     .apps-img {
         min-width: 330px;
         max-width: 425px;
     }
 
-    /* Testimonials */
     .testimonials-container {
         max-width: calc(100% + 60px);
     }
@@ -1258,21 +1044,18 @@ footer {
     }
 
     .free-trial .button-container {
-        display: flex;
         justify-content: left;
     }
 
     .free-trial .logo-container {
-        display: flex;
         justify-content: center;
         gap: 40px;
     }
 
     /* Footer */
-
     .footer {
         max-width: var(--md);
-        padding: 50px 0px;
+        padding: 50px 0;
     }
 
     .footer-logo-container .logo-nav img {
@@ -1286,7 +1069,7 @@ footer {
 
     .footer .content {
         flex-direction: column;
-        align-items: top;
+        align-items: flex-start;
     }
 
     .info .try-free-btn {
@@ -1295,9 +1078,6 @@ footer {
 
     .footer .credit {
         flex-direction: column;
-    }
-
-    .footer .credit {
         font-size: 0.8rem;
         gap: 30px;
     }
@@ -1307,12 +1087,11 @@ footer {
     }
 }
 
-/* Medium ( <= 576px ) */
+/* Mobile (≤ 576px) */
 @media (max-width: 576px) {
-
-    /* section template */
+    /* Layout */
     .text-img-section {
-        padding: 100px 0px;
+        padding: 100px 0;
         text-align: center;
         align-items: center;
         flex-direction: column;
@@ -1323,20 +1102,6 @@ footer {
         display: inline-block;
     }
 
-    /* Header text */
-    /* .header-content {
-        font-size: 2.5rem;
-    } */
-
-    /* Try it free */
-    .try-free-btn {
-        min-width: 110px;
-    }
-
-    /* .text-content {
-        font-size: 0.7rem;
-    } */
-
     /* Navigation */
     nav .container {
         max-width: var(--sm);
@@ -1346,28 +1111,25 @@ footer {
         gap: 0;
     }
 
-    .nav-login-btn {
-        display: none;
-    }
-
+    .nav-login-btn,
     .nav-try-free-btn {
         display: none;
     }
 
-    .login-btn {
+    .login-btn,
+    .try-free-btn {
         padding: 10px 20px;
     }
 
     .try-free-btn {
         min-width: 120px;
         width: 230px;
-        padding: 10px 20px;
     }
 
     /* Hero */
     .hero .container {
         max-width: var(--sm);
-        padding: 120px 0px;
+        padding: 120px 0;
         height: auto;
     }
 
@@ -1375,89 +1137,45 @@ footer {
         background: url(assets/svg/yellow-siluet.svg) no-repeat right center;
     }
 
-    .hero-img {
-        min-width: 0px;
+    .hero-img,
+    .project-management-img,
+    .work-together-img,
+    .extention-img,
+    .customize-img,
+    .apps-img,
+    .data-img {
+        min-width: 0;
         max-width: 516px;
     }
 
-    /* Project management */
-    .project-management {
-
-        max-width: var(--sm);
-    }
-
-    .project-management-img {
-        min-width: 0px;
-        max-width: 550px;
-    }
-
-    /* Work together */
-    .work-together {
-        max-width: var(--sm);
-    }
-
-    .work-together-img {
-        min-width: 0px;
-        max-width: 516px;
-    }
-
-    /* Use as extention */
-    .use-as-extention {
-        max-width: var(--sm);
-    }
-
-    .extention-img {
-        min-width: 0px;
-        max-width: 516px;
-    }
-
-    /* Customize */
-    .customize {
-        max-width: var(--sm);
-    }
-
-    .customize-img {
-        min-width: 0px;
-        max-width: 516px;
-    }
-
-    /* Choose your plan */
-
-    .card-container {
-        max-width: calc(100% + 60px);
-        padding: 0px 30px;
-    }
-
-    /* Your work */
-    .your-work {
-        line-height: normal;
-    }
-
-    /* Your data */
+    .project-management,
+    .work-together,
+    .use-as-extention,
+    .customize,
     .your-data {
         max-width: var(--sm);
     }
 
+    .card-container {
+        max-width: calc(100% + 60px);
+        padding: 0 30px;
+    }
+
+    .your-work {
+        line-height: normal;
+    }
+
     .data-img {
-        min-width: 0px;
-        max-width: 516px;
         justify-content: center;
     }
 
-    /* Our sponsors */
+    /* Sponsors */
     .sponsors-container {
         flex-direction: column;
         gap: 100px;
         max-width: var(--sm);
     }
 
-    /* Apps */
-    .apps-img {
-        min-width: 0px;
-        max-width: 516px;
-    }
-
-    /* Testimonials */
     .testimonials-container {
         max-width: calc(100% + 60px);
     }
@@ -1475,12 +1193,10 @@ footer {
     }
 
     .free-trial .button-container {
-        display: flex;
         justify-content: center;
     }
 
     .free-trial .logo-container {
-        display: flex;
         justify-content: center;
         gap: 40px;
     }
@@ -1489,7 +1205,7 @@ footer {
     .footer {
         text-align: center;
         max-width: var(--sm);
-        padding: 50px 0px;
+        padding: 50px 0;
     }
 
     .footer-logo-container {
@@ -1528,15 +1244,12 @@ footer {
     .footer .credit {
         flex-direction: column;
         align-items: center;
+        font-size: 0.8rem;
+        gap: 30px;
     }
 
     .credit-item {
         flex-direction: column;
-    }
-
-    .footer .credit {
-        font-size: 0.8rem;
-        gap: 30px;
     }
 
     .lang-item .dropdown-icon {
