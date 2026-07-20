@@ -1,5 +1,5 @@
 My slicing landing page project for my internship (pkl)
 
-### tools
+### Languages
 - HTML
 - CSS
