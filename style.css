@@ -60,6 +60,7 @@ a {
 =================================================*/
 .section-image,
 .section-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -150,7 +151,6 @@ a {
 .login-btn,
 .try-free-btn,
 .plan-btn {
-    transition: all 0.3s ease-in-out;
     border-radius: 8px;
     font-weight: 500;
     font-size: 1rem;
@@ -179,7 +179,7 @@ a {
     padding: 16px 40px;
     border: 1px solid var(--yellow-color);
     background-color: var(--light-color);
-    width: 166px;
+    width: 170px;
 }
 
 .right-arrow-icon {
@@ -356,6 +356,7 @@ nav .container {
 }
 
 .customize {
+    width: 100%;
     gap: 100px;
 }
 
@@ -371,7 +372,12 @@ nav .container {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 466px);
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: calc(100% + 60px);
+    grid-template-columns: repeat(3, 411px);
+    padding: 0 30px;
     gap: 24px;
     align-items: center;
 }
@@ -435,7 +441,7 @@ nav .container {
     position: absolute;
     inset: 0;
     background: url(assets/svg/irregular-circle.svg) no-repeat left center;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .your-work h2 {
@@ -513,10 +519,14 @@ nav .container {
 }
 
 .testimonials-container {
+
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: calc(100% + 60px);
+    padding: 30px;
     display: grid;
     grid-template-columns: repeat(3, 426px);
     gap: 30px;
-    padding: 30px 0;
 }
 
 .testimonial-card,
@@ -550,7 +560,8 @@ nav .container {
     gap: 42px;
 }
 
-.user img {
+.user div img {
+    aspect-ratio: 1/1;
     width: 95px;
     height: auto;
 }
@@ -625,6 +636,10 @@ footer {
     justify-content: center;
 }
 
+section.footer {
+    padding: 120px 0px;
+}
+
 .footer .content {
     width: 100%;
     display: flex;
@@ -680,9 +695,25 @@ footer {
 /*================================================
  Responsive
 =================================================*/
+/* Extra extra large desktop (> 1400px) */
+@media (min-width: 1400px) {
+
+    /* Plan card */
+    .card-container {
+        grid-template-columns: repeat(3, 448px);
+        gap: 28px;
+    }
+
+    /* Testimonials */
+    .testimonials-container {
+        grid-template-columns: repeat(3, 448px);
+        gap: 28px;
+    }
+}
 
 /* Large desktop (≤ 1400px) */
 @media (max-width: 1400px) {
+
     /* Shared layout */
     nav .container,
     .hero .container,
@@ -697,6 +728,19 @@ footer {
         max-width: var(--xxl);
     }
 
+    /* Plan card & testimonials sizing */
+    /* Plan card */
+    .card-container {
+        grid-template-columns: repeat(3, 428px);
+        gap: 28px;
+    }
+
+    /* Testimonials */
+    .testimonials-container {
+        grid-template-columns: repeat(3, 428px);
+        gap: 28px;
+    }
+
     /* Images */
     .work-together-img {
         max-width: 520px;
@@ -709,6 +753,7 @@ footer {
 
 /* Desktop / laptop (≤ 1200px) */
 @media (max-width: 1200px) {
+
     /* Navigation */
     nav .container {
         max-width: var(--xl);
@@ -799,7 +844,7 @@ footer {
         gap: 22px;
     }
 
-    .user img {
+    .user div img {
         width: 85px;
     }
 
@@ -810,6 +855,7 @@ footer {
 
 /* Tablet landscape (≤ 992px) */
 @media (max-width: 992px) {
+
     /* Navigation */
     nav .container {
         max-width: var(--lg);
@@ -882,34 +928,30 @@ footer {
         max-width: 450px;
     }
 
-    /* Horizontal scrolling plan cards */
-    .card-container {
-        overflow-x: auto;
-        scrollbar-width: none;
-        max-width: calc(100% + 60px);
-        padding: 0 30px;
-    }
-
     .your-work {
         line-height: normal;
     }
 
-    /* Data image and testimonial card sizing */
+    /* Data image, plan card & testimonial card sizing */
     .data-img {
         min-width: 360px;
         max-width: 420px;
     }
 
-    .testimonials-container {
-        overflow-x: auto;
-        scrollbar-width: none;
+    /* Plan card */
+    /* Plan card */
+    .card-container {
         grid-template-columns: repeat(3, 370px);
-        max-width: calc(100% + 60px);
-        padding: 30px;
+        gap: 30px;
     }
 
-    .user img {
-        width: 50px;
+    /* Testimonials */
+    .testimonials-container {
+        grid-template-columns: repeat(3, 370px);
+    }
+
+    .user div img {
+        width: 60px;
         height: auto;
     }
 
@@ -939,6 +981,7 @@ footer {
 
 /* Tablet portrait (≤ 768px) */
 @media (max-width: 768px) {
+
     /* Layout */
     .text-img-section {
         text-align: center;
@@ -990,7 +1033,8 @@ footer {
     .work-together-img,
     .extention-img,
     .customize-img,
-    .data-img {
+    .data-img,
+    .apps-img {
         max-width: 525px;
     }
 
@@ -1000,11 +1044,6 @@ footer {
     .customize,
     .your-data {
         max-width: var(--md);
-    }
-
-    .card-container {
-        max-width: calc(100% + 60px);
-        padding: 0 30px;
     }
 
     .your-work {
@@ -1022,13 +1061,14 @@ footer {
         max-width: var(--md);
     }
 
-    .apps-img {
-        min-width: 330px;
-        max-width: 425px;
+    /* Plan card & Testimonials sizing */
+    .card-container {
+        grid-template-columns: repeat(3, 340px);
     }
 
+    /* Testimonials */
     .testimonials-container {
-        max-width: calc(100% + 60px);
+        grid-template-columns: repeat(3, 340px);
     }
 
     /* Free trial */
@@ -1089,6 +1129,7 @@ footer {
 
 /* Mobile (≤ 576px) */
 @media (max-width: 576px) {
+
     /* Layout */
     .text-img-section {
         padding: 100px 0;
@@ -1156,11 +1197,6 @@ footer {
         max-width: var(--sm);
     }
 
-    .card-container {
-        max-width: calc(100% + 60px);
-        padding: 0 30px;
-    }
-
     .your-work {
         line-height: normal;
     }
@@ -1176,8 +1212,16 @@ footer {
         max-width: var(--sm);
     }
 
+    /* Plan card & Testimonials resizing*/
+    .card-container {
+        grid-template-columns: repeat(3, 380px);
+        gap: 30px;
+    }
+
+    /* Testimonials */
     .testimonials-container {
-        max-width: calc(100% + 60px);
+        grid-template-columns: repeat(3, 380px);
+        gap: 30px;
     }
 
     /* Free trial */
