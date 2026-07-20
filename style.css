@@ -723,7 +723,6 @@ section.footer {
     .customize,
     .your-data,
     .sponsors-container,
-    .testimonials-container,
     .footer {
         max-width: var(--xxl);
     }
